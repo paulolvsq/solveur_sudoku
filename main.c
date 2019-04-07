@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "functions.h"
+#define NB_GRILLES 3
 
 /*int grille[9][9] = { //mise en forme selon la grille de sudokua
   {1, 0, 0,    0, 0, 7,    0, 9, 0},
@@ -18,7 +19,7 @@
 
 int main(){
   FILE *fichier;
-  fichier = fopen("grilles/grille1.txt", "r");
+  fichier = fopen("grilles/grille2.txt", "r");
   int grille[9][9];
   if(!fichier){
     fprintf(stderr, "Erreur : fichier vide ou inexistant.\n");
