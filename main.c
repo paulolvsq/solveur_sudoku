@@ -47,6 +47,7 @@ int main(){
   t2 = clock();
   temps = (float) (t2-t1)/CLOCKS_PER_SEC; //calcul du temps d'execution
   printf("Temps d'execution : %f secondes.\n", temps);
+  fclose(fichier);
   return 0;
 }
 

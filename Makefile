@@ -19,5 +19,6 @@ clean :
 	rm -f *.o
 	rm -f *~
 	rm -rf solve
+	cd grilles_resolues && rm *
 
 .PHONY : all solve clean
