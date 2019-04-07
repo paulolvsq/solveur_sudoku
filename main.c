@@ -3,23 +3,9 @@
 #include "functions.h"
 #define NB_GRILLES 3
 
-/*int grille[9][9] = { //mise en forme selon la grille de sudokua
-  {1, 0, 0,    0, 0, 7,    0, 9, 0},
-  {0, 3, 0,    0, 2, 0,    0, 0 ,8},
-  {0, 0, 9,    6, 0, 0,    5, 0 ,0},
-
-  {0, 0, 5,    3, 0, 0,    9, 0, 0},
-  {0, 1, 0,    0, 8, 0,    0, 0, 2},
-  {6, 0, 0,    0, 0, 4,    0, 0, 0},
-
-  {3, 0, 0,    0, 0, 0,    0, 1, 0},
-  {0, 4, 0,    0, 0, 0,    0, 0, 7},
-  {0, 0, 7,    0, 0, 0,    3, 0, 0},
-  };*/
-
 int main(){
-  FILE *fichier;
-  fichier = fopen("grilles/grille2.txt", "r");
+  FILE *fichier = NULL;
+  fichier = fopen("grilles/grille1.txt", "r");
   int grille[9][9];
   if(!fichier){
     fprintf(stderr, "Erreur : fichier vide ou inexistant.\n");
@@ -37,9 +23,31 @@ int main(){
   clock_t t1, t2;
   float temps;
   t1 = clock();
+  int i, j;
   if(resoudre2(grille, 0)){
     printf("Grille resolue : \n");
     afficher_jeu(grille);
+    FILE *res = NULL;
+    res = fopen("grilles_resolues/res.txt", "a");
+    for(i = 0; i < 9; i++){
+      if(i % 3 == 0){
+        fprintf(res, "-------------------------\n");
+      }
+      for(j = 0; j < 9; j++){
+        if(j % 3 == 0){
+          fprintf(res, "| %d ", grille[i][j]);
+        }
+        else if(j == 8){
+          fprintf(res, "%d |", grille[i][j]);
+        }
+        else{
+          fprintf(res, "%d ", grille[i][j]);
+        }
+      }
+      fprintf(res, "\n");
+    }
+    fprintf(res, "-------------------------\n\n\n");
+    fclose(res);
   }
   else{
     printf("Erreur\n");
