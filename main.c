@@ -5,7 +5,7 @@
 
 int main(){
   FILE *fichier = NULL;
-  fichier = fopen("grilles/grille1.txt", "r");
+  fichier = fopen("grilles/grille3.txt", "r");
   int grille[9][9];
   if(!fichier){
     fprintf(stderr, "Erreur : fichier vide ou inexistant.\n");
@@ -18,15 +18,15 @@ int main(){
       }
     }
   }
-  printf("Grille non resolue : \n");
-  afficher_jeu(grille);
+  //printf("Grille non resolue : \n");
+  //afficher_jeu(grille);
   clock_t t1, t2;
   float temps;
   t1 = clock();
   int i, j;
   if(resoudre2(grille, 0)){
-    printf("Grille resolue : \n");
-    afficher_jeu(grille);
+    //printf("Grille resolue : \n");
+    //afficher_jeu(grille);
     FILE *res = NULL;
     res = fopen("grilles_resolues/res.txt", "a");
     for(i = 0; i < 9; i++){
