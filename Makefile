@@ -18,7 +18,7 @@ solve : functions.o main.o
 clean :
 	rm -f *.o
 	rm -f *~
-	rm -rf solve
-	cd grilles_resolues && rm -rf *
+	rm -f solve
+	cd grilles_resolues && rm -f *
 
 .PHONY : all solve clean
