@@ -15,17 +15,17 @@ int main(){
 
   t1 = clock();
   res = fopen("grilles_resolues/res.txt", "a");
-
+  //pour tous les fichiers -> on a le nombre de grilles en define
   for(nb_fichiers = 1; nb_fichiers <= NB_GRILLES; nb_fichiers++){
-
+	//on va les chercher dans le bon dossier
     sprintf(nom_fichier, "grilles/grille%d.txt", nb_fichiers);
-    f = fopen(nom_fichier, "r");
+    f = fopen(nom_fichier, "r"); //on les ouvre
 
-    if(!f){
+    if(!f){ //si le fichier est vide ou n'existe pas 
       fprintf(stderr, "Erreur : fichier vide ou inexistant.\n");
     }
 
-    else{
+    else{ //sinon on remplit la grille avec le contenu du fichier 
 
       int i, j, n; //i et j compteurs, n valeur que l'on met dans la grille
 
@@ -34,7 +34,7 @@ int main(){
           fscanf(f, "%d", &grille[i][j]);
         }
       }
-
+	  //s'il est possible de résoudre la grille on la met à la suite dans un fichier res		
       if(resoudre2(grille, 0)){
 
         for(i = 0; i < 9; i++){
@@ -57,15 +57,15 @@ int main(){
         fprintf(res, "-------------------------\n\n\n");
       }
 
-      else{
+      else{ //sinon on met une erreur
         printf("Erreur\n");
       }
-      fclose(f);
+      fclose(f); //on n'oublie pas de fermer le fichier courant
     }
 
   }
 
-  fclose(res);
+  fclose(res); //on n'oublie pas de fermer le fichier res
   t2 = clock();
   temps = (float) (t2-t1)/CLOCKS_PER_SEC; //calcul du temps d'execution
   printf("Temps d'execution : %f secondes.\n", temps);
