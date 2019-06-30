@@ -1,4 +1,5 @@
-FUNCTIONS_C = functions.c
+FUNCTIONS_C = functions.c 
+FONCTIONS_H = fonctions.h
 MAIN_C = main.c
 CC = gcc
 CFLAGS = -Wall -Werror
@@ -12,7 +13,7 @@ main.o : $(MAIN_C) $(FUNCTIONS_H)
 	$(CC) -c -o $@ $(MAIN_C)
 
 solve : functions.o main.o
-	$(CC) $(CFLAGS) -o $@ main.o functions.o
+	$(CC) $(CFLAGS) -o $@ $^	
 	@echo "Done !"
 
 clean :
