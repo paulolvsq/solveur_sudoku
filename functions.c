@@ -52,7 +52,7 @@ int verif_bloc(int jeu[9][9], int ligne, int colonne, int chiffre){ //on vérifie
 
 int resoudre2(int jeu[9][9], int position){ //fonction récursive qui va résoudre la grille 
   if(position == 81){ //cas d'arrêt : on atteint la dernière case de la grille 
-    return 1; //on renvoie vrai 
+    return 1; //on renvoie vrai
   }
   int ligne = position / 9; //on récupère ligne et colonne avec la division entière 
   int colonne = position % 9;
