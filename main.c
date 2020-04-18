@@ -68,7 +68,7 @@ int main(){
   fclose(res); //on n'oublie pas de fermer le fichier res
   t2 = clock();
   temps = (float) (t2-t1)/CLOCKS_PER_SEC; //calcul du temps d'execution
-  printf("Temps d'execution : %f secondes.\n", temps);
+  printf("Temps d'exécution : %f secondes.\n", temps);
 
   return 0;
 }
