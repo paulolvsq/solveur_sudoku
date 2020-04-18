@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "functions.h"
-#define NB_GRILLES 17
+#define NB_GRILLES 18
 
 int main(){
 
