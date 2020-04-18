@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "functions.h"
-#define NB_GRILLES 14
+#define NB_GRILLES 17
 
 int main(){
 
@@ -27,7 +27,7 @@ int main(){
 
     else{ //sinon on remplit la grille avec le contenu du fichier 
 
-      int i, j, n; //i et j compteurs, n valeur que l'on met dans la grille
+	  int i, j;
 
       for(i = 0; i < 9; i++){
         for(j = 0; j < 9; j++){
